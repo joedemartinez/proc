@@ -1,0 +1,16 @@
+
+Open PHPMyAdmin (http://localhost/phpmyadmin)
+
+Import the database localhost.sql
+
+
+
+**LOGIN DETAILS** 
+
+**user**
+empid: Emp65294
+password: password
+
+**admin**
+empid: H2020435
+password: password
