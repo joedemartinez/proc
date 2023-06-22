@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 21, 2023 at 07:51 PM
+-- Generation Time: Jun 22, 2023 at 07:08 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `procdb`
+-- Database: `proc`
 --
 CREATE DATABASE IF NOT EXISTS `proc` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE `proc`;
@@ -174,7 +174,19 @@ INSERT INTO `history_log` (`log_id`, `emp_id`, `action`, `ip`, `host`, `created_
 (185, 'H2020435 - Tom Hank', 'New Project - Tyres Created ', '::1', 'localhost', '2023-06-21 17:46:24'),
 (186, 'H2020435', 'System Log Out', '::1', 'localhost', '2023-06-21 17:46:41'),
 (187, 'h2020435', 'System Log In', '::1', 'localhost', '2023-06-21 17:46:44'),
-(188, 'H2020435', 'System Log Out', '::1', 'localhost', '2023-06-21 17:47:08');
+(188, 'H2020435', 'System Log Out', '::1', 'localhost', '2023-06-21 17:47:08'),
+(189, 'H2020435', 'Password Reset for - Emp65294', '::1', 'localhost', '2023-06-22 16:20:14'),
+(190, 'H2020435', 'System Log Out', '::1', 'localhost', '2023-06-22 16:20:29'),
+(191, 'h2020435', 'System Log In', '::1', 'localhost', '2023-06-22 16:20:37'),
+(192, 'H2020435', 'System Log Out', '::1', 'localhost', '2023-06-22 16:26:04'),
+(193, 'h2020435', 'System Log In', '::1', 'localhost', '2023-06-22 16:27:31'),
+(194, 'H2020435', 'System Log Out', '::1', 'localhost', '2023-06-22 16:29:17'),
+(195, 'h2020435', 'System Log In', '::1', 'localhost', '2023-06-22 16:29:20'),
+(196, 'h2020435', 'System Log In', '::1', 'localhost', '2023-06-22 17:05:48'),
+(197, 'H2020435 - Tom Hank', 'New Project - IT equipment Created ', '::1', 'localhost', '2023-06-22 17:06:01'),
+(198, 'H2020435 - Tom Hank', 'New Project - fixtures Created ', '::1', 'localhost', '2023-06-22 17:07:02'),
+(199, 'H2020435 - Tom Hank', 'New Project - infrastructure development. Created ', '::1', 'localhost', '2023-06-22 17:07:17'),
+(200, 'H2020435 - Tom Hank', 'New Project - healthcare facility. Created ', '::1', 'localhost', '2023-06-22 17:07:31');
 
 -- --------------------------------------------------------
 
@@ -201,7 +213,11 @@ INSERT INTO `projects` (`project_id`, `cat_id`, `project_name`, `project_date`, 
 (13, 1, 'Stationary', '2023-06-13', '2023/06/06 - 2023/07/18', '2023-06-20', 'Tom Hank', 0),
 (18, 4, 'Tracker', '2023-06-08', '06/06/2023 - 06/30/2023', '2023-06-21', 'H2020435 - Tom Hank', 0),
 (19, 3, 'GALOP', '2023-06-23', '06/07/2023 - 07/01/2023', '2023-06-21', 'H2020435 - Tom Hank', 0),
-(20, 2, 'Tyres', '2023-06-20', '06/20/2023 - 07/31/2023', '2023-06-21', 'H2020435 - Tom Hank', 0);
+(20, 2, 'Tyres', '2023-06-20', '06/20/2023 - 07/31/2023', '2023-06-21', 'H2020435 - Tom Hank', 0),
+(21, 1, 'IT equipment', '2023-06-15', '06/22/2023 - 06/22/2023', '2023-06-22', 'H2020435 - Tom Hank', 0),
+(22, 1, 'fixtures', '2023-06-14', '06/22/2023 - 06/22/2023', '2023-06-22', 'H2020435 - Tom Hank', 0),
+(23, 2, 'infrastructure development.', '2023-06-06', '06/22/2023 - 06/22/2023', '2023-06-22', 'H2020435 - Tom Hank', 0),
+(24, 3, 'healthcare facility.', '2023-06-19', '06/22/2023 - 06/22/2023', '2023-06-22', 'H2020435 - Tom Hank', 0);
 
 -- --------------------------------------------------------
 
@@ -303,7 +319,87 @@ INSERT INTO `project_phase` (`phase_id`, `project_id`, `phase_name`, `phase_date
 (97, 20, 'Way Bill', NULL, NULL, NULL, 0),
 (98, 20, 'SRA/Certificate', NULL, NULL, NULL, 0),
 (99, 20, 'Request for Payment', NULL, NULL, NULL, 0),
-(100, 20, 'PV', NULL, NULL, NULL, 0);
+(100, 20, 'PV', NULL, NULL, NULL, 0),
+(101, 21, 'Initialtion/Apporval', NULL, NULL, NULL, 0),
+(102, 21, 'Invitation', NULL, NULL, NULL, 0),
+(103, 21, 'Tender Document', NULL, NULL, NULL, 0),
+(104, 21, 'Issue Form', NULL, NULL, NULL, 0),
+(105, 21, 'Opening', NULL, NULL, NULL, 0),
+(106, 21, 'Submission Form', NULL, NULL, NULL, 0),
+(107, 21, 'Attendance Form', NULL, NULL, NULL, 0),
+(108, 21, 'Opening Records', NULL, NULL, NULL, 0),
+(109, 21, 'Minutes', NULL, NULL, NULL, 0),
+(110, 21, 'Tender Sumbmission', NULL, NULL, NULL, 0),
+(111, 21, 'Evaluation Panel', NULL, NULL, NULL, 0),
+(112, 21, 'Evaluation', NULL, NULL, NULL, 0),
+(113, 21, 'Evaluation approval', NULL, NULL, NULL, 0),
+(114, 21, 'Notification', NULL, NULL, NULL, 0),
+(115, 21, 'Acceptance', NULL, NULL, NULL, 0),
+(116, 21, 'Contract', NULL, NULL, NULL, 0),
+(117, 21, 'Way Bill', NULL, NULL, NULL, 0),
+(118, 21, 'SRA/Certificate', NULL, NULL, NULL, 0),
+(119, 21, 'Request for Payment', NULL, NULL, NULL, 0),
+(120, 21, 'PV', NULL, NULL, NULL, 0),
+(121, 22, 'Initialtion/Apporval', NULL, NULL, NULL, 0),
+(122, 22, 'Invitation', NULL, NULL, NULL, 0),
+(123, 22, 'Tender Document', NULL, NULL, NULL, 0),
+(124, 22, 'Issue Form', NULL, NULL, NULL, 0),
+(125, 22, 'Opening', NULL, NULL, NULL, 0),
+(126, 22, 'Submission Form', NULL, NULL, NULL, 0),
+(127, 22, 'Attendance Form', NULL, NULL, NULL, 0),
+(128, 22, 'Opening Records', NULL, NULL, NULL, 0),
+(129, 22, 'Minutes', NULL, NULL, NULL, 0),
+(130, 22, 'Tender Sumbmission', NULL, NULL, NULL, 0),
+(131, 22, 'Evaluation Panel', NULL, NULL, NULL, 0),
+(132, 22, 'Evaluation', NULL, NULL, NULL, 0),
+(133, 22, 'Evaluation approval', NULL, NULL, NULL, 0),
+(134, 22, 'Notification', NULL, NULL, NULL, 0),
+(135, 22, 'Acceptance', NULL, NULL, NULL, 0),
+(136, 22, 'Contract', NULL, NULL, NULL, 0),
+(137, 22, 'Way Bill', NULL, NULL, NULL, 0),
+(138, 22, 'SRA/Certificate', NULL, NULL, NULL, 0),
+(139, 22, 'Request for Payment', NULL, NULL, NULL, 0),
+(140, 22, 'PV', NULL, NULL, NULL, 0),
+(141, 23, 'Initialtion/Apporval', NULL, NULL, NULL, 0),
+(142, 23, 'Invitation', NULL, NULL, NULL, 0),
+(143, 23, 'Tender Document', NULL, NULL, NULL, 0),
+(144, 23, 'Issue Form', NULL, NULL, NULL, 0),
+(145, 23, 'Opening', NULL, NULL, NULL, 0),
+(146, 23, 'Submission Form', NULL, NULL, NULL, 0),
+(147, 23, 'Attendance Form', NULL, NULL, NULL, 0),
+(148, 23, 'Opening Records', NULL, NULL, NULL, 0),
+(149, 23, 'Minutes', NULL, NULL, NULL, 0),
+(150, 23, 'Tender Sumbmission', NULL, NULL, NULL, 0),
+(151, 23, 'Evaluation Panel', NULL, NULL, NULL, 0),
+(152, 23, 'Evaluation', NULL, NULL, NULL, 0),
+(153, 23, 'Evaluation approval', NULL, NULL, NULL, 0),
+(154, 23, 'Notification', NULL, NULL, NULL, 0),
+(155, 23, 'Acceptance', NULL, NULL, NULL, 0),
+(156, 23, 'Contract', NULL, NULL, NULL, 0),
+(157, 23, 'Way Bill', NULL, NULL, NULL, 0),
+(158, 23, 'SRA/Certificate', NULL, NULL, NULL, 0),
+(159, 23, 'Request for Payment', NULL, NULL, NULL, 0),
+(160, 23, 'PV', NULL, NULL, NULL, 0),
+(161, 24, 'Initialtion/Apporval', NULL, NULL, NULL, 0),
+(162, 24, 'Invitation', NULL, NULL, NULL, 0),
+(163, 24, 'Tender Document', NULL, NULL, NULL, 0),
+(164, 24, 'Issue Form', NULL, NULL, NULL, 0),
+(165, 24, 'Opening', NULL, NULL, NULL, 0),
+(166, 24, 'Submission Form', NULL, NULL, NULL, 0),
+(167, 24, 'Attendance Form', NULL, NULL, NULL, 0),
+(168, 24, 'Opening Records', NULL, NULL, NULL, 0),
+(169, 24, 'Minutes', NULL, NULL, NULL, 0),
+(170, 24, 'Tender Sumbmission', NULL, NULL, NULL, 0),
+(171, 24, 'Evaluation Panel', NULL, NULL, NULL, 0),
+(172, 24, 'Evaluation', NULL, NULL, NULL, 0),
+(173, 24, 'Evaluation approval', NULL, NULL, NULL, 0),
+(174, 24, 'Notification', NULL, NULL, NULL, 0),
+(175, 24, 'Acceptance', NULL, NULL, NULL, 0),
+(176, 24, 'Contract', NULL, NULL, NULL, 0),
+(177, 24, 'Way Bill', NULL, NULL, NULL, 0),
+(178, 24, 'SRA/Certificate', NULL, NULL, NULL, 0),
+(179, 24, 'Request for Payment', NULL, NULL, NULL, 0),
+(180, 24, 'PV', NULL, NULL, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -356,8 +452,8 @@ CREATE TABLE `users_table` (
 --
 
 INSERT INTO `users_table` (`user_id`, `emp_id`, `password`, `user_type`, `status`, `CreatedOn`, `CreatedBy`, `deleted_on`, `deleted_by`, `full_name`, `photo`) VALUES
-(1, 'H2020435', '$2y$10$60WWy.4.9XGx3IQPH2WLIObgsY04baXAW0.mN1rCxT7PyKp.xTEwa', 'admin', 0, '2020-11-13', 'Joshua Appiah Dadzie', '2023-03-29', '', 'Tom Hank', ''),
-(2, 'Emp65294', '$2y$10$o.AQ1kq/RqoTKVv9FGNeVOp2Hd3aYab.d3Ivitt.IEYsvLgkToem2', 'user', 0, '2020-11-17', 'Joshua Appiah Dadzie', '2023-03-29', '', 'Kofi Ampah', 'JohnKKuma@gmail.com1avatar5.png');
+(1, 'H2020435', '$2y$10$KzyJ3OCKbekuiZX/tq62e.yr0iKTMPYyw4hlQFhtwZ2omk8Haghpu', 'admin', 0, '2020-11-13', 'Joshua Appiah Dadzie', '2023-03-29', '', 'Tom Hank', ''),
+(2, 'Emp65294', '$2y$10$KzyJ3OCKbekuiZX/tq62e.yr0iKTMPYyw4hlQFhtwZ2omk8Haghpu', 'user', 0, '2020-11-17', 'Joshua Appiah Dadzie', '2023-03-29', '', 'Kofi Ampah', 'JohnKKuma@gmail.com1avatar5.png');
 
 --
 -- Indexes for dumped tables
@@ -415,19 +511,19 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT for table `history_log`
 --
 ALTER TABLE `history_log`
-  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=189;
+  MODIFY `log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=201;
 
 --
 -- AUTO_INCREMENT for table `projects`
 --
 ALTER TABLE `projects`
-  MODIFY `project_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `project_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `project_phase`
 --
 ALTER TABLE `project_phase`
-  MODIFY `phase_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=101;
+  MODIFY `phase_id` int(30) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=181;
 
 --
 -- AUTO_INCREMENT for table `upload_files`
