@@ -1,9 +1,9 @@
 <?php
-	include '../includes/session.php';
+	include '../inc/session.php';
 
 	if(isset($_POST['reset'])){
 		$employee_id = $_POST['employee_id'];
-		$password = password_hash("password", PASSWORD_DEFAULT);
+		$password = password_hash("123456", PASSWORD_DEFAULT);
 
 
 		$sql = "UPDATE users_table SET password = '$password' WHERE emp_id = '$employee_id'";

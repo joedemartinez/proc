@@ -1,5 +1,5 @@
 <?php
-	include '../includes/session.php'; 
+	include '../inc/session.php'; 
 
 	if(isset($_POST['update'])){
 		$emp_id = $user['emp_id'];
@@ -13,7 +13,7 @@
 		 	if($conn->query($sql)){
 		 		$_SESSION['success'] = 'User password updated successfully';
 		 		// insert logs
-				$username=$_SESSION['user'];
+				$username = $user['emp_id'].' - '.$user['full_name'];
 				// Get host machine name
 				$ip_address = $_SERVER['REMOTE_ADDR'];
 				$host_name = gethostbyaddr($ip_address);

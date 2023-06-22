@@ -1,18 +1,18 @@
 <?php
-	include '../includes/session.php'; 
+	include '../inc/session.php'; 
 
 	if(isset($_POST['upload'])){
 		$emp_id = $user['emp_id'];
 		$filename = $_FILES['photo']['name'];
 		if(!empty($filename)){
-			move_uploaded_file($_FILES['photo']['tmp_name'], '../assets/images/'.$filename);	
+			move_uploaded_file($_FILES['photo']['tmp_name'], '../uploads/images/'.$filename);	
 		}
 
 			$sql = "UPDATE users_table SET photo = '$filename' WHERE emp_id = '$emp_id'";
 		 	if($conn->query($sql)){
 		 		$_SESSION['success'] = 'Profile Photo updated successfully';
 		 		// insert logs
-				$username=$_SESSION['user'];
+				$username=$user['emp_id'].' - '.$user['full_name'];
 				// Get host machine name
 				$ip_address = $_SERVER['REMOTE_ADDR'];
 				$host_name = gethostbyaddr($ip_address);

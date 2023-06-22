@@ -1,9 +1,9 @@
 <?php
-	include '../includes/session.php';
+	include '../inc/session.php'; 
 
-	if(isset($_POST['add'])){
+	if(isset($_POST['create'])){
 		$emp_id = $_POST['emp_id'];
-		$password = password_hash("password", PASSWORD_DEFAULT);
+		$password = password_hash("123456", PASSWORD_DEFAULT);
 		$user_type = $_POST['user_type'];
 		$full_name = $_POST['emp_name'];
 		date_default_timezone_set("GMT");
@@ -24,7 +24,7 @@
 				if($conn->query($sql)){
 					$_SESSION['success'] = 'User added successfully';
 					// insert logs
-					$username=$_SESSION['user'];
+					$username = $user['emp_id'].' - '.$user['full_name'];
 					// Get host machine name
 					$ip_address = $_SERVER['REMOTE_ADDR'];
 					$host_name = gethostbyaddr($ip_address);

@@ -9,8 +9,8 @@ Import the database localhost.sql
 
 **user**
 empid: Emp65294
-password: password
+password: 123456
 
 **admin**
 empid: H2020435
-password: password
+password: 123456

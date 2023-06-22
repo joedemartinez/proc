@@ -1,5 +1,5 @@
 <?php
-	include '../includes/session.php';
+	include '../inc/session.php';
 
 	if(isset($_POST['delete'])){
 		$emp_id = $_POST['empid'];
@@ -10,7 +10,7 @@
 				$_SESSION['success'] = 'User Deleted successfully';
 
 				// insert logs
-				$username=$_SESSION['user'];
+				$username = $user['emp_id'].' - '.$user['full_name'];
 				// Get host machine name
 				$ip_address = $_SERVER['REMOTE_ADDR'];
 				$host_name = gethostbyaddr($ip_address);
@@ -43,7 +43,7 @@
 				//run query
 				$conn->query("INSERT INTO `history_log`(`log_id`, `emp_id`, `action`, `ip`, `host`, `created_at`) VALUES (default,'$username','$action','$ip_address','$host_name',default)");
 
-				header('location: ../deactivatedusers.php'); 
+				header('location: ../deactivatedUsers.php'); 
 				exit();
 			}
 			else{
